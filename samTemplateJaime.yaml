@@ -8,7 +8,7 @@ Resources:
       Handler: lambda_function.lambda_handler
       Runtime: python3.6
       CodeUri: ./SplitFileFromGithub
-      Description: 'Lambda function for CD Demo'
+      Description: 'Lambda function for CD Demos'
       MemorySize: 1024
       Timeout: 30
       Role: 'arn:aws:iam::307927830453:role/service-role/JAIMEP1_techplay_rol'
