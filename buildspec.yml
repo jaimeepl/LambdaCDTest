@@ -1,0 +1,10 @@
+version: 0.1
+phases:
+  install:
+    commands:
+      - aws cloudformation package --template-file samTemplateJaime.yaml --s3-bucket demodaysfile --output-template-file outputSamTemplateJaime.yaml
+artifacts:
+  type: zip
+  files:
+    - samTemplateJaime.yaml
+    - outputSamTemplateJaime.yaml

@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2019-04-25'
+Description: CD Demo Lambda
+Resources:
+  CDDemoLambda:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.6
+      CodeUri: ./SplitFileFromGithub
+      Description: 'Lambda function for CD Demo'
+      MemorySize: 1024
+      Timeout: 30
+      Role: 'arn:aws:iam::307927830453:role/service-role/JAIMEP1_techplay_rol'
+      Events:
+        getAZsAPI:
+          Type: Api
+          Properties:
+            Path: /getazs
+            Method: get
+      Environment:
+        Variables:
+          REGION: eu-west-1
